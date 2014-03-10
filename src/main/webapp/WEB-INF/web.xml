@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>FCloud</display-name>
+	<!-- 
+	
+
+	<servlet>
+		<servlet-name>log4j-init</servlet-name>
+		<servlet-class>com.fcloud.servlet.Log4jInit</servlet-class>
+		<init-param>
+			<param-name>log4j</param-name>
+			<param-value>WEB-INF/classes/log4j.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	 -->
+
+	<!-- 微信接入认证 -->
+	<servlet>
+		<servlet-name>WXValid</servlet-name>
+		<servlet-class>com.fcloud.servlet.WXValid</servlet-class>
+		<init-param>
+			<param-name>TOKEN</param-name>
+			<param-value>fcloud</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WXValid</servlet-name>
+		<url-pattern>/wxvalid</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Arduino上传温度 -->
+	<servlet>
+		<servlet-name>DS18B20</servlet-name>
+		<servlet-class>com.fcloud.servlet.arduino.DS18B20</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DS18B20</servlet-name>
+		<url-pattern>/ds18b20</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 取得Arduino上传温度 -->
+	<servlet>
+		<servlet-name>GetDS18B20</servlet-name>
+		<servlet-class>com.fcloud.servlet.GetDS18B20</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetDS18B20</servlet-name>
+		<url-pattern>/getds18b20</url-pattern>
+	</servlet-mapping>
+</web-app>
