@@ -3,6 +3,7 @@
 	<name>Arduino</name>
 	<comment></comment>
 	<projects>
+		<project>Arduino_Leonardo</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -25,4 +26,16 @@
 		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 		<nature>de.innot.avreclipse.core.avrnature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Ethernet</name>
+			<type>2</type>
+			<location>C:/arduino-1.0.5/libraries/Ethernet</location>
+		</link>
+		<link>
+			<name>SPI</name>
+			<type>2</type>
+			<location>C:/arduino-1.0.5/libraries/SPI</location>
+		</link>
+	</linkedResources>
 </projectDescription>
