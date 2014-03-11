@@ -6,11 +6,6 @@
 package com.fcloud.servlet.arduino;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -18,7 +13,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.log4j.Logger;
+
+import com.fcloud.bean.Temperature;
+import com.fcloud.dao.TemperatureMapper;
 import com.fcloud.utils.DBHelper;
+import com.fcloud.utils.DateTimeUtil;
 
 /**
  * The class <code>DS18B20</code>
@@ -28,7 +29,7 @@ import com.fcloud.utils.DBHelper;
  */
 public class DS18B20 extends HttpServlet {
 
-	// protected Logger logger = Logger.getLogger(DS18B20.class);
+	protected Logger logger = Logger.getLogger(DS18B20.class);
 
 	public static final String Temperature = "temperature";
 	/**
@@ -47,27 +48,23 @@ public class DS18B20 extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
 			IOException {
 		final String temperature = req.getParameter("temperature");
-		// logger.debug(String.format("temperature:%1$s time:%2$s", temperature,
-		// DateTimeUtil.now()));
+		logger.debug(String.format("temperature:%1$s time:%2$s", temperature, DateTimeUtil.now()));
+
+		SqlSessionFactory sf = new DBHelper().getConnection();
+		Temperature bean = new Temperature();
 		try {
-			if (null != temperature) {
-				Connection conn = new DBHelper().getConnection();
-				String sql = "INSERT INTO temperature (temperature,time) values(?,?)";
-				PreparedStatement stmt = conn.prepareStatement(sql);
-				stmt.setDouble(1, Double.valueOf(temperature));
-				Date date = new Date();//获得系统时间.
-		       String nowTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
-				
-				stmt.setTimestamp(2, Timestamp.valueOf(nowTime));
-				stmt.execute();
-				stmt.close();
-				conn.close();
-				resp.getWriter().append("sucess").flush();
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-			resp.getWriter().append("error").flush();
+			bean.setTemperature(Double.valueOf(temperature));
+			bean.setTime(new Date());
+			int id = sf.openSession().getMapper(TemperatureMapper.class).insert(bean);
+
+			logger.debug(String.format("insert id:%1$s time:%2$s", id, DateTimeUtil.now()));
+
+			resp.getWriter().write(id);
+		} catch (Exception e) {
+			logger.error("", e);
+			resp.getWriter().write("0");
 		}
+
 	}
 
 	/*

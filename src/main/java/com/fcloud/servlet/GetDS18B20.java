@@ -7,20 +7,20 @@ package com.fcloud.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 
+import com.fcloud.bean.Temperature;
+import com.fcloud.dao.TemperatureMapper;
 import com.fcloud.utils.DBHelper;
 import com.fcloud.utils.DateTimeUtil;
 
@@ -51,27 +51,17 @@ public class GetDS18B20 extends HttpServlet {
 			IOException {
 		logger.debug("GetDS18B20 time:" + DateTimeUtil.now());
 
-		Connection conn = new DBHelper().getConnection();
-		try {
-			PreparedStatement stmt = conn
-					.prepareStatement("SELECT * FROM temperature order by time desc limit 0,20");
-			ResultSet resultSet = stmt.executeQuery();
-			if (resultSet.first()) {
-				Timestamp timestamp = resultSet.getTimestamp(resultSet.findColumn("time"));
-				double temperature = resultSet.getDouble(resultSet.findColumn("temperature"));
-				printLine(timestamp, temperature, resp.getWriter());
-				while (resultSet.next()) {
-					timestamp = resultSet.getTimestamp(resultSet.findColumn("time"));
-					temperature = resultSet.getDouble(resultSet.findColumn("temperature"));
-					printLine(timestamp, temperature, resp.getWriter());
-				}
-				resultSet.close();
-				stmt.close();
-				conn.close();
+		SqlSessionFactory sf = new DBHelper().getConnection();
+
+		List<Temperature> list = sf.openSession().getMapper(TemperatureMapper.class).query(0, 30);
+
+		if (null != list && list.size() > 0) {
+
+			for (Temperature t : list) {
+				printLine(t.getTime(), t.getTemperature(), resp.getWriter());
 			}
 
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} else {
 			resp.getWriter()
 					.write(String
 							.format("<li ><a href=\"#\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\"  style=\"color:red\">%1$s %2$s</a></li>",
@@ -80,11 +70,12 @@ public class GetDS18B20 extends HttpServlet {
 
 	}
 
-	private void printLine(Timestamp timestamp, double temperature, PrintWriter writer) {
+	private void printLine(Date timestamp, double temperature, PrintWriter writer) {
 		String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(timestamp);
 		writer.write(String
 				.format("<li ><a href=\"#\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\" >%1$s %2$s</a></li>",
 						temperature, time));
+		
 	}
 
 	/*
