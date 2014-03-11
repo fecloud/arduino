@@ -47,6 +47,7 @@ public class DS18B20 extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
 			IOException {
+		resp.setContentType("text/plain;charset=UTF-8");
 		final String temperature = req.getParameter("temperature");
 		logger.debug(String.format("temperature:%1$s time:%2$s", temperature, DateTimeUtil.now()));
 

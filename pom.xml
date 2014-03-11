@@ -21,7 +21,7 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- logging libs -->
+		<!-- logging libs  -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -32,7 +32,7 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>${slf_version}</version>
 		</dependency>
-		<!-- ace libs -->
+	 
 		<dependency>
 			<groupId>com.alibaba.appengine</groupId>
 			<artifactId>services-api</artifactId>
