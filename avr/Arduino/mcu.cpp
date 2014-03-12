@@ -9,7 +9,7 @@ byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
 //IPAddress server(74,125,232,128);  // numeric IP for Google (no DNS)
-char server[] = "www.baidu.com";    // name address for Google (using DNS)
+char server[] = "fecloud.aliapp.com";    // name address for Google (using DNS)
 
 // Set the static IP address to use if the DHCP fails to assign
 IPAddress ip(10, 0, 0, 10);
@@ -20,7 +20,7 @@ IPAddress ip(10, 0, 0, 10);
 EthernetClient client;
 
 // Data wire is plugged into port 2 on the Arduino
-#define ONE_WIRE_BUS 10
+#define ONE_WIRE_BUS 9
 #define TEMPERATURE_PRECISION 9
 
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
@@ -45,6 +45,15 @@ void printAddress(DeviceAddress deviceAddress) {
 void setup(void) {
 	// start serial port
 	Serial.begin(9600);
+
+	// start the Ethernet connection:
+	if (Ethernet.begin(mac) == 0) {
+		Serial.println("Failed to configure Ethernet using DHCP");
+		// no point in carrying on, so do nothing forevermore:
+		// try to congifure using IP address instead of DHCP:
+		Ethernet.begin(mac, ip);
+	}
+
 	Serial.println("Dallas Temperature IC Control Library Demo");
 
 	// Start up the library
@@ -94,14 +103,6 @@ void setup(void) {
 		}
 	}
 
-	// start the Ethernet connection:
-	if (Ethernet.begin(mac) == 0) {
-		Serial.println("Failed to configure Ethernet using DHCP");
-		// no point in carrying on, so do nothing forevermore:
-		// try to congifure using IP address instead of DHCP:
-		Ethernet.begin(mac, ip);
-	}
-
 }
 
 // function to print the temperature for a device
@@ -120,38 +121,38 @@ void printTemperature(DeviceAddress deviceAddress) {
 	//Serial.println(DallasTemperature::toFahrenheit(tempC)); // Converts tempC to Fahrenheit
 }
 
-void uploadToServer(int temperature) {
+void uploadToServer(float temperature) {
 	// if you get a connection, report back via serial:
-	Serial.println(server);
+
 	if (client.connect(server, 80)) {
 		Serial.println("connected");
 		// Make a HTTP request:
 		client.print("GET /ds18b20?temperature=");
 		client.print(temperature);
 		client.println(" HTTP/1.1");
-//		client.println("Host: fecloud.aliapp.com");
-		client.println("Host: www.baidu.com");
+		client.println("Host: fecloud.aliapp.com");
 		client.println("Connection: close");
 		client.println();
+		delay(1000);
+		// if there are incoming bytes available
+		// from the server, read them and print them:
+		while (client.available()) {
+			char c = client.read();
+			Serial.print(c);
+		}
+
 	} else {
 		// kf you didn't get a connection to the server:
 		Serial.println("connection failed");
 	}
 
-	// if there are incoming bytes available
-	// from the server, read them and print them:
-	if (client.available()) {
-		char c = client.read();
-		Serial.print(c);
-	}
-
 	// if the server's disconnected, stop the client:
-	if (!client.connected()) {
-		Serial.println();
+//	if (!client.connected()) {
+//		Serial.println();
 		Serial.println("disconnecting.");
 		client.stop();
+//	}
 
-	}
 	Serial.println("uploadToServer end");
 	Serial.println();
 }
@@ -178,6 +179,6 @@ void loop(void) {
 		//else ghost device! Check your power requirements and cabling
 
 	}
-	delay(10000);
+	delay(60000);
 }
 
