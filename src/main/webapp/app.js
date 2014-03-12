@@ -1,8 +1,7 @@
 $(document).ready(function(){
 	
-	
-	$( "#listview_collap" ).on( "collapsibleexpand", function( event, ui ) {
-		$("#list_temperature").val("");
+	//$( "#listview_collap" ).on( "collapsibleexpand", function( event, ui ) {
+		 $("#list_temperature").val("");
 		$.ajax({url:'getds18b20',
 				dataType:'json' ,
 				success:function(data){
@@ -19,7 +18,7 @@ $(document).ready(function(){
 		});
 		$("#list_temperature").listview( "refresh" );
 				
-	} );
+	//} );
 	
 	Date.prototype.format =function(format)
     {
@@ -44,6 +43,12 @@ $(document).ready(function(){
 
 
 	
+});
+
+$(document).on("pageinit","#home",function(){
+
+  
+
 });
 
 

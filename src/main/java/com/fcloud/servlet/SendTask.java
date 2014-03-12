@@ -1,9 +1,9 @@
 /**
- * @(#) DS18B20.java Created on 2014-2-28
+ * @(#) SendTask.java Created on 2014-3-12
  *
  * Copyright © 2013 深圳企业云科技有限公司  版权所有
  */
-package com.fcloud.servlet.arduino;
+package com.fcloud.servlet;
 
 import java.io.IOException;
 import java.util.Date;
@@ -16,22 +16,20 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.log4j.Logger;
 
-import com.fcloud.bean.Temperature;
-import com.fcloud.dao.TemperatureMapper;
+import com.fcloud.bean.Task;
+import com.fcloud.dao.TaskMapper;
 import com.fcloud.utils.DBHelper;
 import com.fcloud.utils.DateTimeUtil;
 
 /**
- * The class <code>DS18B20</code>
+ * The class <code>SendTask</code>
  * 
- * @author braver
+ * @author Feng OuYang
  * @version 1.0
  */
-public class DS18B20 extends HttpServlet {
+public class SendTask extends HttpServlet {
 
-	protected Logger logger = Logger.getLogger(DS18B20.class);
-
-	public static final String Temperature = "temperature";
+	protected Logger logger = Logger.getLogger(SendTask.class);
 	/**
 	 * 
 	 */
@@ -48,24 +46,30 @@ public class DS18B20 extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
 			IOException {
 		resp.setContentType("text/html;charset=UTF-8");
-		final String temperature = req.getParameter("temperature");
-		logger.debug(String.format("temperature:%1$s time:%2$s", temperature, DateTimeUtil.now()));
+		final String content = req.getParameter("content");
 
-		SqlSessionFactory sf = new DBHelper().getConnection();
-		Temperature bean = new Temperature();
-		try {
-			bean.setTemperature(Double.valueOf(temperature));
-			bean.setTime(new Date());
-			sf.openSession().getMapper(TemperatureMapper.class).insert(bean);
+		logger.debug(String.format("content:%1$s time:%2$s", content, DateTimeUtil.now()));
 
-			logger.debug(String.format("insert id:%1$s time:%2$s", bean.getId(), DateTimeUtil.now()));
+		if (null != content) {
+			try {
+				SqlSessionFactory sf = new DBHelper().getConnection();
 
-			resp.getWriter().write("" + bean.getId());
-		} catch (Exception e) {
-			logger.error("", e);
+				final Task task = new Task();
+				task.setContent(content);
+				task.setTime(new Date());
+				sf.openSession().getMapper(TaskMapper.class).insert(task);
+
+				logger.debug(String.format("insert id:%1$s time:%2$s", task.getId(),
+						DateTimeUtil.now()));
+
+				resp.getWriter().write("" + task.getId());
+			} catch (IOException e) {
+				logger.error("", e);
+				resp.getWriter().write("0");
+			}
+		} else {
 			resp.getWriter().write("0");
 		}
-
 	}
 
 	/*

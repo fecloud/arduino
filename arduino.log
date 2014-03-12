@@ -1,0 +1,26 @@
+[DEBUG]main-org.apache.ibatis.logging.LogFactory-Logging initialized using 'org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-PooledDataSource forcefully closed/removed all connections.
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-PooledDataSource forcefully closed/removed all connections.
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-PooledDataSource forcefully closed/removed all connections.
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-PooledDataSource forcefully closed/removed all connections.
+[DEBUG]main-org.apache.ibatis.transaction.jdbc.JdbcTransaction-Openning JDBC Connection
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-Created connection 17320380.
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert-ooo Using Connection [com.mysql.jdbc.JDBC4Connection@10849bc]
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert-==>  Preparing: INSERT INTO Task ( content, time ) VALUES (?, ?) 
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert-==> Parameters: content(String), 2014-03-12 14:56:18.335(Timestamp)
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert!selectKey-ooo Using Connection [com.mysql.jdbc.JDBC4Connection@10849bc]
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert!selectKey-==>  Preparing: SELECT LAST_INSERT_ID() AS id 
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert!selectKey-==> Parameters: 
+[DEBUG]main-org.apache.ibatis.logging.LogFactory-Logging initialized using 'org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-PooledDataSource forcefully closed/removed all connections.
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-PooledDataSource forcefully closed/removed all connections.
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-PooledDataSource forcefully closed/removed all connections.
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-PooledDataSource forcefully closed/removed all connections.
+[DEBUG]main-org.apache.ibatis.transaction.jdbc.JdbcTransaction-Openning JDBC Connection
+[DEBUG]main-org.apache.ibatis.datasource.pooled.PooledDataSource-Created connection 17320380.
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert-ooo Using Connection [com.mysql.jdbc.JDBC4Connection@10849bc]
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert-==>  Preparing: INSERT INTO Task ( content, time ) VALUES (?, ?) 
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert-==> Parameters: content(String), 2014-03-12 14:57:58.857(Timestamp)
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert!selectKey-ooo Using Connection [com.mysql.jdbc.JDBC4Connection@10849bc]
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert!selectKey-==>  Preparing: SELECT LAST_INSERT_ID() AS id 
+[DEBUG]main-com.fcloud.dao.TaskMapper.insert!selectKey-==> Parameters: 

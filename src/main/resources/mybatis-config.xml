@@ -15,5 +15,6 @@
 	</environments>
 	<mappers>
 		<mapper resource="myBatis/Temperature.xml" />
+		<mapper resource="myBatis/Task.xml" />
 	</mappers>
 </configuration>

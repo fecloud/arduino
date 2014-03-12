@@ -53,4 +53,14 @@
 		<servlet-name>GetDS18B20</servlet-name>
 		<url-pattern>/getds18b20</url-pattern>
 	</servlet-mapping>
+	
+	<!-- 发送任务 -->
+	<servlet>
+		<servlet-name>SendTask</servlet-name>
+		<servlet-class>com.fcloud.servlet.SendTask</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SendTask</servlet-name>
+		<url-pattern>/sendtask</url-pattern>
+	</servlet-mapping>
 </web-app>

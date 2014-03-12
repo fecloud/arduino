@@ -31,11 +31,11 @@
 								<option id="de.innot.avreclipse.compiler.option.debug.level.1113707728" name="Generate Debugging Info" superClass="de.innot.avreclipse.compiler.option.debug.level" value="de.innot.avreclipse.compiler.option.debug.level.none" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.optimize.623805086" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.1519448016" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Arduino_Leonardo/core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Ethernet/utility}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Ethernet}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/SPI}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Arduino_Leonardo/pin}&quot;"/>
+									<listOptionValue builtIn="false" value="/Arduino_Leonardo/pin"/>
+									<listOptionValue builtIn="false" value="/Arduino_Leonardo/core"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.def.630083649" name="Define Syms (-D)" superClass="de.innot.avreclipse.compiler.option.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="USB_PID=0x8036"/>
@@ -48,7 +48,7 @@
 								<option id="de.innot.avreclipse.compiler.option.language.uchar.1353559309" name="char is unsigned (-funsigned-char)" superClass="de.innot.avreclipse.compiler.option.language.uchar" value="false" valueType="boolean"/>
 								<option id="de.innot.avreclipse.compiler.option.language.ubitfields.1264865173" name="bitfields are unsigned (-funsigned-bitfields)" superClass="de.innot.avreclipse.compiler.option.language.ubitfields" value="false" valueType="boolean"/>
 								<option id="de.innot.avreclipse.compiler.option.verbose.810167972" name="Verbose (-v)" superClass="de.innot.avreclipse.compiler.option.verbose" value="false" valueType="boolean"/>
-								<option id="de.innot.avreclipse.compiler.option.undef.1353454446" superClass="de.innot.avreclipse.compiler.option.undef" valueType="undefDefinedSymbols">
+								<option id="de.innot.avreclipse.compiler.option.undef.1353454446" name="Undefine Syms (-U)" superClass="de.innot.avreclipse.compiler.option.undef" valueType="undefDefinedSymbols">
 									<listOptionValue builtIn="false" value="__AVR_ATmega16__"/>
 								</option>
 								<inputType id="de.innot.avreclipse.compiler.winavr.input.1418604521" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
