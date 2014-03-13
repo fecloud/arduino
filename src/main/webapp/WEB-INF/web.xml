@@ -6,7 +6,7 @@
 	<display-name>FCloud</display-name>
 
 	<!-- 
-	 -->
+	
 
 	<servlet>
 		<servlet-name>log4j-init</servlet-name>
@@ -18,7 +18,7 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
-	
+	 -->
 
 	<!-- 微信接入认证 -->
 	<servlet>
