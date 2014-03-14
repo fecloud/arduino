@@ -25,7 +25,7 @@ public class XMLTest {
 		stream.alias("xml", WXMessage.class);
 		WXMessage message = (WXMessage) stream.fromXML(xml);
 		System.out.println(message);
-		message.setContent("112\\n");
+		message.setContent("112\nff\nggg");
 		
 		System.err.println(stream.toXML(message));
 	}

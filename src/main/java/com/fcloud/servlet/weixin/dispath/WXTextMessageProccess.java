@@ -77,13 +77,13 @@ public class WXTextMessageProccess implements WXProcess {
 			SqlSessionFactory sf = new DBHelper().getConnection();
 			List<Temperature> list = null;
 			if (Tools.isNum(content)) {
-				builder.append("以下是您查询的温度信息:\\n");
+				builder.append("以下是您查询的温度信息:\n");
 				list = sf.openSession().getMapper(TemperatureMapper.class)
 						.query(0, Long.valueOf(content));
 				if (list != null) {
 					for (Temperature t : list) {
 						builder.append(t.getTemperature() + "℃  "
-								+ DateTimeUtil.toText(t.getTime(), "HH:mm") +"\\n");
+								+ DateTimeUtil.toText(t.getTime(), "HH:mm") +"\n");
 					}
 
 				}

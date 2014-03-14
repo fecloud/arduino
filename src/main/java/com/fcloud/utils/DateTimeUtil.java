@@ -9,8 +9,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.sun.org.apache.regexp.internal.recompile;
-
 /**
  * The class <code>DateTimeUtil</code>
  * 
