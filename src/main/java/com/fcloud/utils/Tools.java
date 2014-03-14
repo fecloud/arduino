@@ -6,6 +6,7 @@
 package com.fcloud.utils;
 
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 /**
  * The class <code>Tools</code>
@@ -48,5 +49,16 @@ public final class Tools {
 
 	}
 
-	
+	/**
+	 * 
+	 * @param string
+	 * @return
+	 */
+	public static boolean isNum(String string) {
+		if (null != string) {
+			return Pattern.compile("\\d+").matcher(string).matches();
+		}
+		return false;
+	}
+
 }

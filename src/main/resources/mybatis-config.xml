@@ -7,9 +7,9 @@
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
 				<property name="url"
-					value="jdbc:mysql://rds6v2uvvrennaa.mysql.rds.aliyuncs.com:3306/db7k81jhgfm13wla?characterEncoding=UTF-8" />
-				<property name="username" value="db7k81jhgfm13wla" />
-				<property name="password" value="ouyangfeng" />
+					value="jdbc:mysql://sqld.duapp.com:4050/aOyPgkecbfhrwGaQRtEx?characterEncoding=UTF-8" />
+				<property name="username" value="aakGIrE5OxGvGdLvfw0mWW44" />
+				<property name="password" value="Quxk8AmkCECVGE7XT39sYw6izT8OiGTI" />
 			</dataSource>
 		</environment>
 	</environments>

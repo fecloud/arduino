@@ -9,6 +9,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.sun.org.apache.regexp.internal.recompile;
+
 /**
  * The class <code>DateTimeUtil</code>
  * 
@@ -142,5 +144,17 @@ public final class DateTimeUtil {
 	 */
 	public static String toMilliString(String timeString) throws Exception {
 		return String.valueOf(toMillis(timeString));
+	}
+
+	/*
+	 * 是否是出太阳时间
+	 */
+	public static boolean isSun(Date date) {
+		final String d = toText(date, "HH");
+		if (Integer.valueOf(d) > 6 && Integer.valueOf(d) < 19) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

@@ -6,7 +6,7 @@
 	<display-name>FCloud</display-name>
 
 	<!-- 
-	
+	 -->
 
 	<servlet>
 		<servlet-name>log4j-init</servlet-name>
@@ -18,20 +18,20 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
-	 -->
+	
 
 	<!-- 微信接入认证 -->
 	<servlet>
-		<servlet-name>WXValid</servlet-name>
-		<servlet-class>com.fcloud.servlet.WXValid</servlet-class>
+		<servlet-name>WXPlatform</servlet-name>
+		<servlet-class>com.fcloud.servlet.weixin.WXPlatform</servlet-class>
 		<init-param>
 			<param-name>TOKEN</param-name>
 			<param-value>fcloud</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>WXValid</servlet-name>
-		<url-pattern>/wxvalid</url-pattern>
+		<servlet-name>WXPlatform</servlet-name>
+		<url-pattern>/wxplatform</url-pattern>
 	</servlet-mapping>
 	
 	<!-- Arduino上传温度 -->

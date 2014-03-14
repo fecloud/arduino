@@ -9,10 +9,6 @@
 	<packaging>war</packaging>
 	<name>${artifactId}</name>
 
-	<properties>
-		<slf_version>1.7.5</slf_version>
-	</properties>
-
 
 	<dependencies>
 		<dependency>
@@ -21,26 +17,8 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- logging libs -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf_version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf_version}</version>
-		</dependency>
-	 
-		<dependency>
-			<groupId>com.alibaba.appengine</groupId>
-			<artifactId>services-api</artifactId>
-			<version>1.0.1</version>
-			<scope>provided</scope>
-		</dependency> 
-		<!-- <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> 
-			<version>1.2.17</version> </dependency> -->
+
+
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
@@ -56,7 +34,17 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.1.1</version>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.2.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -73,12 +61,4 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<!-- repo for ace dependency -->
-		<repository>
-			<id>acesdk-repository</id>
-			<name>Ace Sdk Repository</name>
-			<url>http://acesdk.github.io/repo</url>
-		</repository>
-	</repositories>
 </project>
