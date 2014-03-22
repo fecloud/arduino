@@ -27,7 +27,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-bool WebSocketClient::connect(char *hostname, char *name, int port)
+bool WebSocketClient::connect(const char *hostname , char name[], int port)
 {
 	bool result = false;
 
@@ -74,7 +74,7 @@ void WebSocketClient::setDataArrivedDelegate(
 	_dataArrivedDelegate = dataArrivedDelegate;
 }
 
-void WebSocketClient::sendHandshake(char * name)
+void WebSocketClient::sendHandshake(char  name[])
 {
 	_client.print("hand:");
 	_client.print(name);

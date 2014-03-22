@@ -37,14 +37,14 @@
 class WebSocketClient {
 	public:
 		typedef void (*DataArrivedDelegate)(WebSocketClient client, String data);
-		bool connect(char *hostname ,char *name ="arduino uno",int port = 80);
+		bool connect(const char *hostname ,char name[] ="arduino uno",int port = 80);
         bool connected();
         void disconnect();
 		void monitor();
 		void setDataArrivedDelegate(DataArrivedDelegate dataArrivedDelegate);
 		void send(String data);
 	private:
-        void sendHandshake(char *name);
+        void sendHandshake(char name[]);
         EthernetClient _client;
         DataArrivedDelegate _dataArrivedDelegate;
         bool readHandshake();
