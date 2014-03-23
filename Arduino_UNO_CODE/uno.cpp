@@ -18,13 +18,27 @@ void invoke(void (*in)())
 void dataArrived(WebSocketClient client, String data)
 {
 	Serial.println("Data Arrived: " + data);
+	if(data.startsWith("led")){
+		Serial.println("led cmd");
+		String v = data.substring(4);
+		Serial.println(v);
+		if(v=="1"){
+			Serial.println("led HIGH");
+			digitalWrite(2,HIGH);
+		}else {
+			Serial.println("led LOW");
+			digitalWrite(2,LOW);
+		}
+	}
 	client.send("ok");
 }
 
 int conneted_server()
 {
+	pinMode(2,OUTPUT);
+	digitalWrite(2,LOW);
 	Ethernet.begin(mac);
-	client.connect(server);
+	client.connect(server,"arduino uno",9000);
 	client.setDataArrivedDelegate(dataArrived);
 	return 1;
 }
@@ -32,19 +46,20 @@ int conneted_server()
 void setup()
 {
 	Serial.begin(9600);
-	pq = InitQueue();
-	EnQueue(pq, (void*) conneted_server);
+	conneted_server();
+	//pq = InitQueue();
+	//EnQueue(pq, (void*) conneted_server);
 }
 
 void loop()
 {
-	if (!IsEmpty(pq))
-	{
-		Item item;
-		DeQueue(pq, &item);
-
-		invoke(item);
-	}
+//	if (!IsEmpty(pq))
+//	{
+//		Item item;
+//		DeQueue(pq, &item);
+//
+//		invoke(item);
+//	}
 
 	client.monitor();
 }

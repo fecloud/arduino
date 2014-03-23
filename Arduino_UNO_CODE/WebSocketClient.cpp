@@ -98,7 +98,7 @@ bool WebSocketClient::readHandshake()
 		handshake += line;
 	}
 
-	result = handshake.equals("ok");
+	result = handshake.equals("200");
 	Serial.println(result);
 	if (!result)
 	{
