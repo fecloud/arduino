@@ -27,14 +27,14 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>Ethernet</name>
+			<name>arduino</name>
 			<type>2</type>
-			<location>C:/arduino-1.0.5-r2/libraries/Ethernet</location>
+			<location>/home/dev/arduino-1.0.5/hardware/arduino/cores/arduino</location>
 		</link>
 		<link>
-			<name>SPI</name>
+			<name>standard</name>
 			<type>2</type>
-			<location>C:/arduino-1.0.5-r2/libraries/SPI</location>
+			<location>/home/dev/arduino-1.0.5/hardware/arduino/variants/standard</location>
 		</link>
 	</linkedResources>
 </projectDescription>
