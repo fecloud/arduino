@@ -6,10 +6,12 @@ AVR_TOOL := C:/arduino-1.0.5-r2/hardware/tools/avr
 SERIALDEV := /dev/ttyACM0
 TARGET :=uno
 MASTER_NK := .
-SRC_DIR=src/core \
+SRC_DIR = src \
+		src/core \
 		src/core/avr-libc \
 		src/Ethernet \
 		src/Ethernet/utility \
-		src/SPI src
+		src/SPI  
+
 
 include $(MASTER_NK)/master.mk
