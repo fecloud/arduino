@@ -64,6 +64,7 @@ CXX				:=$(AVRTOOLSPATH)avr-g++
 LD 				:=$(AVRTOOLSPATH)avr-ld
 AR 				:=$(AVRTOOLSPATH)avr-ar
 OBJCOPY 		:=$(AVRTOOLSPATH)avr-objcopy
+AVROBJDUMP		:=$(AVRTOOLSPATH)avr-objdump
 AVRSIZE 		:=$(AVRTOOLSPATH)avr-size
 
 #default serial monitor
@@ -196,6 +197,8 @@ target: $(DIR_WORK)/$(TARGET).hex
 #hex
 $(DIR_WORK)/$(TARGET).hex: $(DIR_WORK)/$(TARGET).elf
 	$(OBJCOPY) -O ihex -R .eeprom $< $@
+	$(AVROBJDUMP) -h -S $< > $(DIR_WORK)/$(TARGET).lss
+	$(OBJCOPY) -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex $<  $(DIR_WORK)/$(TARGET).eep
 	$(AVRSIZE) --format=avr --mcu=$(BOARD_BUILD_MCU) $<
 	
 #elf	
