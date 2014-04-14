@@ -1,0 +1,352 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"os",
+				"OS"
+			],
+			[
+				"A",
+				"AVRDUDE"
+			],
+			[
+				"sc",
+				"src"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"AVR: Create/Update Project"
+			],
+			[
+				"avr",
+				"AVR: Create/Update Project"
+			],
+			[
+				"av",
+				"AVR: Create/Update Project"
+			],
+			[
+				"crate",
+				"AVR: Create/Update Project"
+			],
+			[
+				"li",
+				"Package Control: List Packages"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"packge control",
+				"Package Control: Remove Package"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 417.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/F/Arduino_Leonardo_CODE/.gitignore",
+		"/F/Arduino_UNO_CODE/.gitignore",
+		"/F/Arduino_Leonardo_CODE/master.mk",
+		"/F/Arduino_UNO_CODE/master.mk",
+		"/F/Arduino_Leonardo_CODE/src/DallasTemperature.cpp",
+		"/F/Arduino_Leonardo_CODE/Makefile",
+		"/F/Arduino_UNO_CODE/Makefile",
+		"/F/Arduino_UNO_CODE/src/test.cpp",
+		"/F/arduino/Arduino_UNO_CODE/Makefile",
+		"/F/arduino/Arduino_UNO_CODE/master.mk",
+		"/F/arduino/Arduino_UNO_CODE/[Finished in 0.1s]master.mk",
+		"/F/arduino/Arduino_UNO_CODE/build.xml",
+		"/F/arduino/Arduino_UNO_CODE/src/master.mk",
+		"/F/arduino/Arduino_UNO_CODE/local.properties",
+		"/D/android-sdks/tools/ant/build.xml",
+		"/F/arduino/Arduino_UNO_CODE/ant/arduino-build.xml",
+		"/F/ArduinoDevel/include-build.xml",
+		"/F/arduino/Arduino_UNO_CODE/ant/include-build.xml",
+		"/C/arduino-1.0.5-r2/hardware/arduino/bootloaders/atmega8/Makefile",
+		"/D/workspace/3.0/OATOS_Business/src/com/qycloud/android/business/provider/DepartmentProvider.java",
+		"/D/tmp/2.6/OATOS_Business/src/com/qycloud/android/business/provider/DepartmentProvider.java",
+		"/F/arduino/Arduino_UNO_CODE/uno.cpp",
+		"/D/workspace/3.0/OATOS_Business/src/com/qycloud/business/server/UserServer.java",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/AVR/SublimeAVR.sublime-settings",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/SublimeAVR.sublime-settings",
+		"/F/chrome/test.cpp",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/SublimeClang.sublime-settings",
+		"/F/chrome/manifest.json",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/README.md",
+		"/D/tmp/privateCloud_2.4/OATOS_Business_2.4_private/src/com/qycloud/business/server/UserServer.java",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/F/chrome/popup.html",
+		"/F/chrome/popup.js",
+		"/C/Users/Feng OuYang/Desktop/smses.xml",
+		"/C/arduino-1.0.5-r2/hardware/arduino/cores/arduino/WString.h",
+		"/C/arduino-1.0.5-r2/hardware/arduino/cores/arduino/Udp.h",
+		"/C/arduino-1.0.5-r2/hardware/arduino/cores/arduino/new.cpp",
+		"/C/arduino-1.0.5-r2/hardware/arduino/variants/standard/pins_arduino.h",
+		"/C/arduino-1.0.5-r2/hardware/tools/avr/avr/include/avr/pgmspace.h",
+		"/C/Users/Feng OuYang/Downloads/arduino-mk-0.8/Arduino.mk",
+		"/D/tmp/2.6/OATOS_Business/src/com/qycloud/business/server/UserServer.java",
+		"/C/Users/Feng OuYang/Desktop/M_Device.java.txt",
+		"/C/arduino-1.0.5-r2/hardware/arduino/bootloaders/stk500v2/Makefile",
+		"/C/arduino-1.0.5-r2/libraries/SPI/examples/DigitalPotControl/DigitalPotControl.ino",
+		"/C/arduino-1.0.5-r2/libraries/SPI/SPI.h",
+		"/C/arduino-1.0.5-r2/libraries/SPI/SPI.cpp",
+		"/C/arduino-1.0.5-r2/hardware/arduino/cores/arduino/new.h",
+		"/F/arduOS/arduos16/arduos16.h",
+		"/C/arduino-1.0.5-r2/hardware/arduino/cores/arduino/Arduino.h",
+		"/J/5.相关例程/33.舵机驱动/main.C",
+		"/J/5.相关例程/18.上电读EEprom实现上电数码管加1/main.c",
+		"/F/avr.c",
+		"/F/makefile",
+		"/F/FemtoOS/IDE/workspace/FemtoOS_Ateml/Standard/objects.mk",
+		"/F/FemtoOS/IDE/workspace/FemtoOS_Ateml/Standard/sources.mk",
+		"/F/FemtoOS/MainCode/femtoos_devices/femtoos_ATmega1281.asm",
+		"/E/AVR/workspace/Test/Release/makefile",
+		"/D/workspace/3.0/OATOS/src/com/qycloud/android/app/fragments/upload/UploadListNewAdapter.java",
+		"/X/share/webapp/audio/audio.js",
+		"/E/AVR/workspace/Test/Test.c",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
+		"/F/FemtoOS/IDE/workspace/FemtoOS_Ateml/src/femtoos_startup.s",
+		"/F/FemtoOS/MainCode/femtoos_headers/femtoos_code.h",
+		"/F/FemtoOS/MainCode/femtoos_devices/femtoos_ATmega328P.asm",
+		"/F/FemtoOS/IDE/script/compile",
+		"/C/Users/Feng OuYang/AppData/Local/Temp/Test.java",
+		"/D/workspace/3.0/OATOS/src/com/qycloud/android/app/service/OatosServiceFlow.java",
+		"/C/arduino-1.0.5-r2/hardware/arduino/cores/arduino/avr-libc/malloc.c",
+		"/F/arduino_server/src/main/java/com/fcloud/servlet/arduino/Arduino.java",
+		"/F/FemtoOS_0.922/Readme",
+		"/E/git/ArduinoWebsocketClient/WebSocketClient.cpp",
+		"/C/arduino-1.0.5-r2/libraries/SD/File.cpp",
+		"/D/baiduyundownload/asm/1.asm",
+		"/F/avrx/Examples/Timers.c",
+		"/D/apache-tomcat-7.0.42/webapps/arduino-server-1.0.0/JQMCharts/scripts/app.js",
+		"/F/arduino/avr/Arduino/mcu.cpp",
+		"/E/git/JQMCharts/scripts/app.js",
+		"/F/jae_nodefcloud/package.json",
+		"/F/jae_nodefcloud/app.js",
+		"/F/jae_nodefcloud/README.md",
+		"/C/arduino-1.0.5/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168.c",
+		"/C/arduino-1.0.5/hardware/arduino/bootloaders/atmega8/ATmegaBOOT.c",
+		"/C/arduino-1.0.5/hardware/arduino/bootloaders/caterina/Caterina.c",
+		"/C/arduino-1.0.5/hardware/tools/avr/doc/avr-libc/examples/demo/a.txt",
+		"/E/AVR/workspace/atmega16_bootloader/.cproject",
+		"/C/arduino-1.0.5/examples/01.Basics/AnalogReadSerial/AnalogReadSerial.ino",
+		"/F/jae_fcloud/src/main/java/com/fcloud/servlet/WXValid.java",
+		"/C/Users/Feng OuYang/Desktop/广西联通.txt",
+		"/C/Users/Feng OuYang/Desktop/cJSON/tests/test1",
+		"/C/Users/Feng OuYang/Desktop/cJSON/test.c",
+		"/C/Users/Feng OuYang/Desktop/cJSON/cJSON.c",
+		"/C/Users/Feng OuYang/Desktop/cJSON/README",
+		"/C/arduino-1.0.5/hardware/arduino/cores/arduino/USBCore.h",
+		"/C/arduino-1.0.5/hardware/arduino/cores/arduino/HardwareSerial.cpp",
+		"/C/arduino-1.0.5/hardware/arduino/cores/arduino/HID.cpp",
+		"/C/arduino-1.0.5/hardware/arduino/variants/leonardo/pins_arduino.h",
+		"/C/arduino-1.0.5/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Board/LEDs.h",
+		"/C/arduino-1.0.5/hardware/tools/avr/avr/include/avr/io.h",
+		"/C/arduino-1.0.5/hardware/tools/avr/avr/include/avr/iom32u4.h",
+		"/C/arduino-1.0.5/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Arduino-usbdfu.c",
+		"/C/arduino-1.0.5/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Arduino-usbdfu.h",
+		"/C/arduino-1.0.5/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Descriptors.h",
+		"/C/arduino-1.0.5/hardware/tools/avr/avr/include/avr/iom324.h",
+		"/C/arduino-1.0.5/hardware/tools/avr/avr/include/avr/iomxx4.h",
+		"/C/Users/Feng OuYang/Desktop/classes_dex2jar.src/com/adobe/air/ResourceIdMap.java",
+		"/C/Users/Feng OuYang/Desktop/contact.CSV",
+		"/E/chinaunio/OATOS_2.4_private/src/com/pulltorefresh/lib/PullToRefreshAdapterViewBase.java",
+		"/C/Users/Feng OuYang/AppData/Local/Temp/Rar$DIa0.693/debug.log",
+		"/C/Users/Feng OuYang/Desktop/process.log"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ARDUINO_SDK_VERSION",
+			"AVRDUDECONF",
+			"mytask",
+			"dir.target",
+			"override",
+			"INCLUDES",
+			"CORE_INCLUDES",
+			"dir_lib",
+			"=\"${",
+			"DIR_LIB",
+			"	\n",
+			"ARDUINOLIBOBJS",
+			"DIR_LIB",
+			"ARDUINOLIBOBJS",
+			"inhibit_sublime_completions",
+			"encyptLoginData",
+			"login",
+			"https",
+			"_BV",
+			"TEMPERATURE_PRECISION",
+			"numberOfDevices",
+			"eeprom_wb",
+			"eeprom_rb",
+			"eeprom_is_ready",
+			"app_start",
+			"0x14",
+			"nothing_response",
+			"packge install"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"sh"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 118.0
+	},
+	"output.exec":
+	{
+		"height": 197.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"vid",
+				"/C/arduino-1.0.5/hardware/arduino/variants/leonardo/pins_arduino.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 177.0,
+	"status_bar_visible": true
+}
