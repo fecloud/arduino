@@ -119,7 +119,7 @@ CPPFLAGS += -I. $(foreach dir, $(SRC_DIR),\
 
 CPPDEPFLAGS = -MMD -MP -MF $(DIR_WORK)/.dep/$<.dep
 
-LINKFLAGS += -Os -Wl,--gc-sections -mmcu=$(BOARD_BUILD_MCU)
+LINKFLAGS += -Os -Wl,--gc-sections,-Map,$(DIR_WORK)/$(TARGET).map -mmcu=$(BOARD_BUILD_MCU)
 
 #linux flash tools
 ifeq ($(OS),linux)
@@ -203,7 +203,7 @@ $(DIR_WORK)/$(TARGET).hex: $(DIR_WORK)/$(TARGET).elf
 	
 #elf	
 $(DIR_WORK)/$(TARGET).elf: $(OBJECTS)
-	$(CC) $(LINKFLAGS) $(OBJECTS) $(ARDUINOLIB) -lm -o $@
+	$(CC) $(LINKFLAGS) $(OBJECTS) -lm -o $@
 		
 #build sources	
 $(DIR_WORK)/%.c.o: %.c
