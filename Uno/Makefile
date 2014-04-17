@@ -3,15 +3,19 @@
 #SERIALDEV is the POSIX device name of the serial device that represents your attached Arduino.
 
 AVR_TOOL := C:/arduino-1.0.5-r2/hardware/tools/avr
-SERIALDEV := /dev/ttyACM0
+SERIALDEV := COM22
 TARGET :=uno
 MASTER_NK := .
 SRC_DIR = src \
 		src/core \
 		src/core/avr-libc \
+		src/SPI  \
 		src/Ethernet \
 		src/Ethernet/utility \
-		src/SPI  
+		src/Queue \
+		src/task \
+#		src/aJson \
+#		src/aJson/utility
 
 
 include $(MASTER_NK)/master.mk

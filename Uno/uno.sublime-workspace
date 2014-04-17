@@ -96,6 +96,28 @@
 	},
 	"file_history":
 	[
+		"/F/arduino/Uno/src/core/IPAddress.h",
+		"/F/arduino/Uno/src/uno.cpp",
+		"/F/arduino/Uno/Makefile",
+		"/F/arduino/Uno/master.mk",
+		"/F/arduino/Leonardo/Makefile",
+		"/F/arduino/Leonardo/master.mk",
+		"/F/arduino/Uno/src/json-parser/json.h",
+		"/F/arduino/Uno/src/core/WString.h",
+		"/F/arduino/Uno/src/test.c",
+		"/F/arduino/Uno/src/SPI/SPI.h",
+		"/F/arduino/Uno/src/WebSocketClient.h",
+		"/F/arduino/Uno/src/uno.h",
+		"/F/arduino/Uno/src/Serial.cpp",
+		"/F/arduino/Uno/src/arduos_core/examples/Serial.cpp",
+		"/F/arduino/Uno/src/test.cpp",
+		"/F/arduino/Uno/src/core/Arduino.h",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/SublimeClang.sublime-settings",
+		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/D/tmp/privateCloud_chinaunicom/OATOS_2.4_private/src/com/qycloud/android/app/service/msg/MessageCenter.java",
+		"/D/tmp/privateCloud_chinaunicom/OATOS_2.4_private/src/com/qycloud/android/app/service/OatosServiceFlow.java",
+		"/D/tmp/privateCloud_chinaunicom/OATOS_Foundation_2.4_private/src/com/qycloud/android/service/OatosService.java",
+		"/D/tmp/privateCloud_chinaunicom/OATOS_Foundation_2.4_private/src/com/qycloud/android/message/MessageCenter.java",
 		"/F/arduino/Uno/uno.sublime-project",
 		"/F/arduino/Leonardo/leonardo.sublime-project",
 		"/F/Arduino_Leonardo_CODE/.gitignore",
@@ -122,11 +144,9 @@
 		"/F/arduino/Arduino_UNO_CODE/uno.cpp",
 		"/D/workspace/3.0/OATOS_Business/src/com/qycloud/business/server/UserServer.java",
 		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/AVR/SublimeAVR.sublime-settings",
-		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
 		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/SublimeAVR.sublime-settings",
 		"/F/chrome/test.cpp",
 		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/SublimeClang.sublime-settings",
 		"/F/chrome/manifest.json",
 		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
 		"/C/Users/Feng OuYang/AppData/Roaming/Sublime Text 2/Packages/User/SublimeLinter.sublime-settings",
@@ -203,15 +223,7 @@
 		"/C/arduino-1.0.5/hardware/tools/avr/avr/include/avr/io.h",
 		"/C/arduino-1.0.5/hardware/tools/avr/avr/include/avr/iom32u4.h",
 		"/C/arduino-1.0.5/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Arduino-usbdfu.c",
-		"/C/arduino-1.0.5/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Arduino-usbdfu.h",
-		"/C/arduino-1.0.5/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Descriptors.h",
-		"/C/arduino-1.0.5/hardware/tools/avr/avr/include/avr/iom324.h",
-		"/C/arduino-1.0.5/hardware/tools/avr/avr/include/avr/iomxx4.h",
-		"/C/Users/Feng OuYang/Desktop/classes_dex2jar.src/com/adobe/air/ResourceIdMap.java",
-		"/C/Users/Feng OuYang/Desktop/contact.CSV",
-		"/E/chinaunio/OATOS_2.4_private/src/com/pulltorefresh/lib/PullToRefreshAdapterViewBase.java",
-		"/C/Users/Feng OuYang/AppData/Local/Temp/Rar$DIa0.693/debug.log",
-		"/C/Users/Feng OuYang/Desktop/process.log"
+		"/C/arduino-1.0.5/hardware/arduino/firmwares/atmegaxxu2/arduino-usbdfu/Arduino-usbdfu.h"
 	],
 	"find":
 	{
@@ -230,6 +242,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"json_parse",
+			"scr",
+			"$(info AVRTOOLSPATH $(AVRTOOLSPATH))",
+			"SPI/SPI.h",
+			"SPI",
 			"ARDUINO_SDK_VERSION",
 			"AVRDUDECONF",
 			"mytask",
@@ -318,7 +335,7 @@
 	},
 	"output.exec":
 	{
-		"height": 197.0
+		"height": 359.0
 	},
 	"replace":
 	{
