@@ -3,7 +3,7 @@
 #SERIALDEV is the POSIX device name of the serial device that represents your attached Arduino.
 
 AVR_TOOL := C:/arduino-1.0.5-r2/hardware/tools/avr
-SERIALDEV := COM22
+SERIALDEV := COM18
 TARGET :=uno
 MASTER_NK := .
 SRC_DIR = src \

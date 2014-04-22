@@ -5,14 +5,9 @@
 
 byte mac[] =
 { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-const char *server = "192.168.2.14";
-IPAddress ip(192,168,2,177);
+const char *server = "111.206.45.12";
+IPAddress ip(10, 0, 0, 9);
 WebSocketClient client;
-
-// void invoke(void (*in)())
-// {
-// 	(*in)();
-// }
 
 void dataArrived(WebSocketClient client, String data)
 {
@@ -38,17 +33,18 @@ void dataArrived(WebSocketClient client, String data)
 
 int conneted_server()
 {
-	pinMode(2, OUTPUT);
-	digitalWrite(2, LOW);
-	Ethernet.begin(mac,ip);
+	Ethernet.begin(mac, ip);
+	Serial.println(Ethernet.localIP());
 	char device_name[] =
 	{ "Arduino uno" };
-	while(1)
+	while (1)
 	{
-		if(client.connect(server, device_name, 30156))
+		if (client.connect(server, device_name, 30156))
 		{
 			break;
-		}else {
+		}
+		else
+		{
 			delay(1000);
 			Serial.println("try connet");
 		}
@@ -66,7 +62,6 @@ void setup()
 
 void loop()
 {
-
 	client.monitor();
 }
 

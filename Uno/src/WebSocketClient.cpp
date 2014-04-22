@@ -76,13 +76,18 @@ void WebSocketClient::setDataArrivedDelegate(
 
 void WebSocketClient::sendHandshake(char  name[])
 {
-	_client.print("hand:");
-	_client.print(name);
-	_client.println();
+
+	_client.println(name);
+#ifndef DEBUG
+	Serial.println(name);
+#endif
 }
 
 bool WebSocketClient::readHandshake()
 {
+#ifndef DEBUG
+	Serial.println("readHandshake");
+#endif
 	bool result = false;
 	String handshake = "", line;
 	int maxAttempts = 300, attempts = 0;
@@ -92,12 +97,17 @@ bool WebSocketClient::readHandshake()
 		delay(100);
 		attempts++;
 	}
-
+#ifndef DEBUG
+	Serial.println("read server response finish");
+#endif
 	while ((line = readLine()) != "")
 	{
 		handshake += line;
 	}
-
+#ifndef DEBUG
+	Serial.print("server result");
+	Serial.println(handshake);
+#endif
 	result = handshake.equals("200");
 	Serial.println(result);
 	if (!result)
