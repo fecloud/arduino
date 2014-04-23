@@ -12,23 +12,6 @@ WebSocketClient client;
 void dataArrived(WebSocketClient client, String data)
 {
 	Serial.println("Data Arrived: " + data);
-	if (data.startsWith("led"))
-	{
-		Serial.println("led cmd");
-		String v = data.substring(4);
-		Serial.println(v);
-		if (v == "1")
-		{
-			Serial.println("led HIGH");
-			digitalWrite(2, HIGH);
-		}
-		else
-		{
-			Serial.println("led LOW");
-			digitalWrite(2, LOW);
-		}
-	}
-	client.send("ok");
 }
 
 int conneted_server()

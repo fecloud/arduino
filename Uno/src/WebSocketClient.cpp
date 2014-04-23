@@ -60,7 +60,7 @@ void WebSocketClient::monitor()
 		{
 			bufferLine += character;
 		}
-		else if (character != '\r' && _dataArrivedDelegate != NULL)
+		else if (character == '\n' && _dataArrivedDelegate != NULL)
 		{
 			_dataArrivedDelegate(*this, bufferLine);
 			bufferLine = "";
