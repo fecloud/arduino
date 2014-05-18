@@ -11,9 +11,8 @@
 class Task
 {
 public:
-	Task();
-	virtual ~Task();
-	virtual void doTask();
+	virtual ~Task() =0 ;		
+	virtual void doTask() =0 ;
 };
 
 #endif /* TASK_H_ */

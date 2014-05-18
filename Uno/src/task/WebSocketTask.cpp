@@ -7,14 +7,49 @@
 
 #include "WebSocketTask.h"
 
-WebSocketTask::WebSocketTask()
+void dataArrived(WebSocketClient client, String data)
 {
-	// TODO Auto-generated constructor stub
+	Serial.println("Data Arrived: " + data);
+}
+
+int WebSocketTask::conneted_server()
+{
+	Ethernet.begin(mac, ip);
+	Serial.println(Ethernet.localIP());
+	char device_name[] =
+	{ "Arduino uno" };
+	while (1)
+	{
+		if (client.connect(server, device_name, 30156))
+		{
+			break;
+		}
+		else
+		{
+			delay(1000);
+			Serial.println("try connet");
+		}
+	}
+	client.setDataArrivedDelegate(dataArrived);
+	return 1;
+}
+
+
+void WebSocketTask::doTask()
+{
+	#ifdef DEBUG
+		Serial.println("doTask");
+	#endif
+
+	int i = conneted_server();
+
+	#ifdef DEBUG
+		Serial.println("i:" + i );
+	#endif
 
 }
 
-WebSocketTask::~WebSocketTask()
+void WebSocketTask::monitor()
 {
-
+	client.monitor();
 }
-
