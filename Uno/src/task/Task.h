@@ -10,8 +10,7 @@
 
 class Task
 {
-public:
-	virtual ~Task() =0 ;		
+public:	
 	virtual void doTask() =0 ;
 };
 

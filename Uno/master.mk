@@ -56,9 +56,8 @@ OBJECTS:=$(foreach dir, $(SRC_DIR), \
 
 #********************************************************************************************************
 # software source
-ifeq ($(OS),windows)
-	AVRTOOLSPATH += $(AVR_TOOL)/bin/
-endif
+AVRTOOLSPATH += $(AVR_TOOL)/bin/
+
 CC              :=$(AVRTOOLSPATH)avr-gcc
 CXX				:=$(AVRTOOLSPATH)avr-g++
 LD 				:=$(AVRTOOLSPATH)avr-ld
@@ -121,17 +120,12 @@ CPPDEPFLAGS = -MMD -MP -MF $(DIR_WORK)/.dep/$<.dep
 
 LINKFLAGS += -Os -Wl,--gc-sections,-Map,$(DIR_WORK)/$(TARGET).map -mmcu=$(BOARD_BUILD_MCU)
 
-#linux flash tools
-ifeq ($(OS),linux)
-AVRDUDE += avrdude
-AVRDUDECONF += /etc/avrdude.conf
-endif
 
-#window flash tools
-ifeq ($(OS),windows)
+
+#flash tools
 AVRDUDE += $(AVRTOOLSPATH)/avrdude
 AVRDUDECONF += $(AVR_TOOL)/etc/avrdude.conf
-endif
+
 
 AVRDUDEFLAGS += $(addprefix -C , $(AVRDUDECONF)) -DV -v
 AVRDUDEFLAGS += -p $(BOARD_BUILD_MCU)

@@ -14,10 +14,7 @@
 #include "SPI/SPI.h"
 #include "websocket/WebSocketClient.h"
 
-byte mac[] =
-{ 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-const char *server = "111.206.45.12";
-IPAddress ip(10, 0, 0, 9);
+
 
 class WebSocketTask: public Task
 {
