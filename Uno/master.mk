@@ -46,6 +46,8 @@ ifdef SystemRoot
 else
 ifeq ($(shell uname), Linux)
 	OS := linux
+else
+	OS := unknow
 endif
 endif
 
@@ -56,7 +58,11 @@ OBJECTS:=$(foreach dir, $(SRC_DIR), \
 
 #********************************************************************************************************
 # software source
-AVRTOOLSPATH += $(AVR_TOOL)/bin/
+ifdef AVR_TOOL
+	ifneq ($(AVR_TOOL),"")
+		AVRTOOLSPATH += $(AVR_TOOL)/bin/
+	endif
+endif
 
 CC              :=$(AVRTOOLSPATH)avr-gcc
 CXX				:=$(AVRTOOLSPATH)avr-g++
@@ -123,8 +129,13 @@ LINKFLAGS += -Os -Wl,--gc-sections,-Map,$(DIR_WORK)/$(TARGET).map -mmcu=$(BOARD_
 
 
 #flash tools
-AVRDUDE += $(AVRTOOLSPATH)/avrdude
-AVRDUDECONF += $(AVR_TOOL)/etc/avrdude.conf
+AVRDUDE += $(AVRTOOLSPATH)avrdude
+ifneq ($(AVRTOOLSPATH),"")
+	AVRDUDECONF :=$(AVR_TOOL)/etc/avrdude.conf
+else
+AVRDUDECONF :=/etc/avrdude.conf
+endif
+
 
 
 AVRDUDEFLAGS += $(addprefix -C , $(AVRDUDECONF)) -DV -v
