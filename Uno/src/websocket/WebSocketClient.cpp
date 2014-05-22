@@ -21,7 +21,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  */
-
+#include "util.h"
 #include "WebSocketClient.h"
 #include <WString.h>
 #include <string.h>
@@ -52,8 +52,10 @@ void WebSocketClient::disconnect()
 
 void WebSocketClient::monitor()
 {
+	debug("monitor");
 	char character;
-	if (_client.available() > 0)
+	debug(_client.available());
+	while (_client.available() > 0)
 	{
 		character = _client.read();
 		if (character != '\n' && character != '\r')
@@ -78,16 +80,12 @@ void WebSocketClient::sendHandshake(char  name[])
 {
 
 	_client.println(name);
-#ifndef DEBUG
-	Serial.println(name);
-#endif
+	debug(name);
 }
 
 bool WebSocketClient::readHandshake()
 {
-#ifndef DEBUG
-	Serial.println("readHandshake");
-#endif
+	debug("readHandshake");
 	bool result = false;
 	String handshake = "", line;
 	int maxAttempts = 300, attempts = 0;
@@ -97,19 +95,15 @@ bool WebSocketClient::readHandshake()
 		delay(100);
 		attempts++;
 	}
-#ifndef DEBUG
-	Serial.println("read server response finish");
-#endif
+	debug("read server response finish");
 	while ((line = readLine()) != "")
 	{
 		handshake += line;
 	}
-#ifndef DEBUG
-	Serial.print("server result");
-	Serial.println(handshake);
-#endif
+	debug("server result");
+	debug(handshake);
 	result = handshake.equals("200");
-	Serial.println(result);
+	debug(result);
 	if (!result)
 	{
 		_client.stop();
