@@ -8,7 +8,7 @@
 #ifndef UTIL_H_
 #define UTIL_H_
 #include "core/Arduino.h"
-//#define DEBUG
+#define DEBUG
 
 #ifdef DEBUG
 #define debug(x) Serial.println(x);
